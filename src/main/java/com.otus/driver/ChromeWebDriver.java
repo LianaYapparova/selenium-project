@@ -6,11 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ChromeWebDriver implements IDriver{
-    @Override
-    public WebDriver newDriver() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        ChromeDriverManager.getInstance(DriverManagerType.CHROME).setup();
-        return new ChromeDriver(chromeOptions);
-    }
+public class ChromeWebDriver implements IDriver {
+  @Override
+  public WebDriver newDriver(String... args) {
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments(args);
+    ChromeDriverManager.getInstance(DriverManagerType.CHROME).setup();
+    return new ChromeDriver(chromeOptions);
+  }
 }

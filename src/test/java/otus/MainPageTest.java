@@ -4,22 +4,24 @@ import com.otus.components.ListCourseComponent;
 import org.testng.annotations.Test;
 import com.otus.pages.MainPageOtus;
 
-public class MainPageTest extends BaseTest{
+public class MainPageTest extends BaseTest {
 
-    @Test
-    public void chooseCourse(){
-        new MainPageOtus(driver).open();
+  @Test
+  public void chooseCourseTest() {
+    new MainPageOtus(driver).open();
 
-        new ListCourseComponent(driver)
-                .findCourse("Machine Learning. Professional");
-    }
+    new ListCourseComponent(driver)
+        .findCourse("Cloud Solution Architecture")
+        .checkTitle("Cloud Solution Architecture");
+  }
 
 
-    @Test
-    public void chooseEarlyCourse(){
-        new MainPageOtus(driver).open();
+  @Test
+  public void chooseEarlyCourseTest() {
+    new MainPageOtus(driver).open();
 
-        new ListCourseComponent(driver)
-                .findEarlyCourse();
-    }
+    new ListCourseComponent(driver)
+        .findEarlyCourse()
+        .checkTitle("Cloud Solution Architecture");
+  }
 }

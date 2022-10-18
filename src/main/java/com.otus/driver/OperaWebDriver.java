@@ -7,10 +7,11 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 
 public class OperaWebDriver implements IDriver {
-    @Override
-    public WebDriver newDriver() {
-        OperaOptions operaOptions = new OperaOptions();
-        OperaDriverManager.getInstance(DriverManagerType.OPERA).setup();
-        return new OperaDriver(operaOptions);
-    }
+  @Override
+  public WebDriver newDriver(String... args) {
+    OperaOptions operaOptions = new OperaOptions();
+    operaOptions.addArguments(args);
+    OperaDriverManager.getInstance(DriverManagerType.OPERA).setup();
+    return new OperaDriver(operaOptions);
+  }
 }

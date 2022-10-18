@@ -5,11 +5,15 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class BasePage<T> extends CommonActions<T> {
 
-    public BasePage(WebDriver driver) {
-        super(driver);
-    }
+  public BasePage(WebDriver driver) {
+    super(driver);
+  }
 
-    public void open() {
-        driver.get("https://otus.ru/");
-    }
+  public void open() {
+    driver.get(getBaseUrl());
+  }
+
+  public String getBaseUrl() {
+    return System.getProperty("webdriver.base.url");
+  }
 }
