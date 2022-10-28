@@ -9,8 +9,9 @@ public abstract class BasePage<T> extends CommonActions<T> {
     super(driver);
   }
 
-  public void open() {
+  public T open() {
     driver.get(getBaseUrl());
+    return (T) this;
   }
 
   public String getBaseUrl() {
