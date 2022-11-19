@@ -11,8 +11,8 @@ public class MainPageTest extends BaseTest {
     new MainPageOtus(driver).open();
 
     new ListCourseComponent(driver)
-        .findCourse("Cloud Solution Architecture")
-        .checkTitle("Cloud Solution Architecture");
+        .findCourse("Data Engineer")
+        .checkTitle("Data Engineer");
   }
 
 
@@ -22,6 +22,6 @@ public class MainPageTest extends BaseTest {
 
     new ListCourseComponent(driver)
         .findEarlyCourse()
-        .checkTitle("Cloud Solution Architecture");
+        .checkTitle("Выбор профессии в IT");
   }
 }
